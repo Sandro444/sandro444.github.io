@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Drum Machine</title>
+    <style>
+        #drum-machine{
+            height: auto;
+            width: 80vw;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            background-color: cadetblue;
+        }
+        #buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        .drum-pad{
+            margin: 2%;
+            background-color: coral;
+            font-size: 3em;
+            border: none;
+            color: darkslateblue;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        #bQ, #bA, #bZ{
+            margin-left: 4%;
+        }
+        #disp{
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+
+        }
+        #cr{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #display{
+            color: darkslateblue;
+            background-color: coral;
+            text-decoration: underline;
+            margin-top:4%;
+            margin-left: 2%;
+            margin-bottom: 4%;
+            margin-right: 4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+        }
+        body{background-color: darkslateblue;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+    </style>
+  </head>
+<body>
+    <div id="drum-machine">
+        <div id="buttons">
+                <button id="bQ" class="drum-pad" value="Q" onclick="play1()">Q
+                    <audio id="Q" class="clip" src="Drum-Sounds/Q.mp3"></audio></button>
+                <button id="bW" class="drum-pad" value="W" onclick="play2()">W
+                    <audio id="W" class="clip" src="Drum-Sounds/W.mp3"></audio></button>
+                <button id="bE" class="drum-pad" value="E" onclick="play3()">E
+                    <audio id="E" class="clip" src="Drum-Sounds/E.mp3"></audio></button>
+                <button id="bA" class="drum-pad" value="A" onclick="play4()">A
+                    <audio id="A" class="clip" src="Drum-Sounds/A.mp3"></audio></button>
+                <button id="bS" class="drum-pad" value="S" onclick="play5()">S
+                    <audio id="S" class="clip" src="Drum-Sounds/S.mp3"></audio></button>
+                <button id="bD" class="drum-pad" value="D" onclick="play6()">D
+                    <audio id="D" class="clip" src="Drum-Sounds/D.mp3"></audio></button>
+                <button id="bZ" class="drum-pad" value="Z" onclick="play7()">Z
+                    <audio id="Z" class="clip" src="Drum-Sounds/Z.mp3"></audio></button>
+                <button id="bX" class="drum-pad" value="X" onclick="play8()">X
+                    <audio id="X"class="clip" src="Drum-Sounds/X.mp3"></audio></button>
+                <button id="bC" class="drum-pad" value="C" onclick="play9()">C
+                    <audio id="C" class="clip" src="Drum-Sounds/C.mp3"></audio></button> </div>
+                    <div id="disp">
+            <h1 id="display">Your Sound</h1>
+            <p id="cr">by Sandro Tsereteli</p> </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+        function play1() {
+        var audio = document.getElementById("Q");
+        audio.play();
+        var show = document.getElementById('display')
+        show.innerHTML= 'Sound1'
+        }
+        function play2() {
+        var audio = document.getElementById("W");
+        audio.play();
+        var show = document.getElementById('display')
+        show.innerHTML= 'Sound2'
+        }
+        function play3() {
+        var audio = document.getElementById("E");
+        audio.play();
+        var show = document.getElementById('display')
+        show.innerHTML= 'Sound3'
+        }
+        function play4() {
+            var audio = document.getElementById("A");
+            audio.play();
+            var show = document.getElementById('display')
+            show.innerHTML= 'Sound4'
+            }
+        function play5() {
+            var audio = document.getElementById("S");
+            audio.play();
+            var show = document.getElementById('display')
+            show.innerHTML= 'Sound5'
+            }
+            function play6() {
+                var audio = document.getElementById("D");
+                audio.play();
+                var show = document.getElementById('display')
+                show.innerHTML= 'Sound6'
+            }
+            function play7() {
+                var audio = document.getElementById("Z");
+                audio.play();
+                var show = document.getElementById('display')
+                show.innerHTML= 'Sound7'
+                }
+    function play8() {
+    var audio = document.getElementById("X");
+    audio.play();
+    var show = document.getElementById('display')
+    show.innerHTML= 'Sound8'
+    }
+        
+    function play9() {
+    var audio = document.getElementById("C");
+    audio.play();
+    var show = document.getElementById('display')
+    show.innerHTML = 'Sound9'
+    }
+    document.onkeydown = function(e){
+        e = e || window.event;
+        var key = e.which || e.keyCode;
+        if(key===81){
+            play1()
+        }
+        else if (key===87){
+            play2()
+        }
+        else if (key===69){
+            play3()
+        }
+        else if (key===65){
+            play4()
+        }
+        else if (key===83){
+            play5()
+        }
+        else if (key===68){
+            play6()
+        }
+        else if (key===90){
+            play7()
+        }
+        else if (key===88){
+            play8()
+        }
+        else if (key===67){
+            play9()
+        }
+    }
+    </script>
+  </body>
+</html>

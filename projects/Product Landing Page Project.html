@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product</title>
+    <style>
+        body{
+            background-color: dimgray;
+        }
+        #header{
+            position:sticky;
+            top:0;
+            display: flex;
+            height: 15vh;
+            background-color: darkgray;
+            align-items: center;
+            border: 1px solid black;
+
+        }
+        #nav-bar{
+            list-style: none;
+            flex: 1 100%;
+            float: right;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: darkgray;
+        }
+        a{
+            text-decoration: none;
+            font-size: 150%;
+            color: white;
+            font-weight: bolder;
+            text-align: center;
+        }
+        .nav-link{
+            border-radius: 5%;
+            background-color: dimgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px 5px 10px;
+            height: 30px;
+            width: 10vw;
+            margin-right: 5vw;
+            
+        }
+        .nav-link:hover{
+            background-color: darkgray;
+        }
+        #header-img{background-color: darkgray;
+        flex: 1 20%;}
+        #form{
+            height: 30vh;
+            width: 60vw;
+            margin: 0 auto;
+            background-color: darkslategray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        iframe{
+            display: block;
+            margin: 0 auto;
+        }
+        hr{
+            border: 2px dimgray solid;
+            width: 100%;
+        }
+        #desc{margin:0 auto;
+            font-size: 1em;
+            height: auto;
+            width: 60vw;
+            text-align: center;
+            background-color: lightgrey;
+            color: grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #pricing{
+            display: flex;
+            justify-content: center;
+            margin: 5% 10%;
+            flex-flow: row wrap;
+        }
+        .pricing{border:1px solid black;
+            text-align: center;
+            margin:  0 5%;
+            height: 200px;
+            width: 100px;
+        }
+        .pricing h3{
+            font-size: 1.2em;
+            color: midnightblue;
+        }
+        .pricing p{
+            font-size: 1em;
+            color: rgb(32, 133, 167);
+            font-weight: bold;
+        }
+        .pricing h2{
+            font-size: 1.4em;
+            color: gold;
+        }
+        .medium p{
+            color: rgb(110, 192, 219);;
+        }
+        .premium p{
+            color: rgb(147, 219, 243);;
+        }
+        .basic{
+            margin-top: 10px;
+            background-color: rgb(168, 168, 168);
+        }
+        .medium{
+            margin-top: 10px;
+            background-color: rgb(121, 121, 121);
+        }
+        .premium{
+            margin-top: 10px;
+            background-color: rgb(97, 97, 97);
+        }
+        iframe {
+            width: 50vw;
+            height: 60vh;
+        }
+        @media (max-width: 650px){
+            iframe{
+                width: 300px;
+                height: 200px;
+            }
+            .pricing{
+                width: 100px;
+                height: 200px;
+            }
+            
+            #nav-bar{
+                flex-flow:column wrap ;
+            }
+            #header{
+                flex-direction: column;
+            }
+            .nav-link{
+                width: 90%;
+                height: 15%;
+                margin-right: 0;
+            }
+            #header-img{
+                display: none;
+            }
+            #nav-bar{
+                height: 100%;
+                flex: 1 100%;
+                width: 100%;
+            }
+            #desc{
+                font-size: 0.7em;
+            }
+            form {flex-flow: column wrap;}
+            form input{
+                width: 150px;
+            }
+        }
+        @media (max-width: 1000px){
+            a{
+                font-size: 100%;
+                font-weight: bold;
+            }
+        }
+        @media (max-width: 320px){
+            iframe{
+                width: 50vw;
+                height: 30vh;
+            }
+            #header{
+                justify-content: center;
+            }
+            .nav-link{
+                margin-right: 0;
+                width: 80%;
+                height: 15%;
+            }
+            #header-img{
+                display: none;
+            }
+            #nav-bar{
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                flex: 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <img id="header-img" style="width :10%;"src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Rocket_Lab_logo.svg/1024px-Rocket_Lab_logo.svg.png" alt="logo">
+        <nav id="nav-bar">
+            <li class="nav-link" href="#desc"><a href="#desc">Description</a></li>
+            <li class="nav-link" href="#video"><a href="#video">video</a></li>
+            <li class="nav-link" href="#pricing"><a href="#pricing">pricing</a></li>
+        </nav>
+    </header>
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input type="email" id="email" name="email" placeholder="enter your email" required>
+        <input type="submit" id="submit" placeholder="submit" name="submit">
+    </form>
+    <div id="desc">
+        <h1> High Quality Product</h1><hr>
+        <h1> Reliable Launches</h1><hr>
+        <h1> Best Price</h1>
+    </div>
+    <div>
+        <iframe src="https://www.youtube.com/embed/enndCzvZpZk" id = "video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+    </div>
+    <div id="pricing">
+        <div class="pricing basic"><h3>Starting Package</h3><p>send one satelite in space</p><b><h2>1.2M</h2></b></div>
+        <div class="pricing medium"><h3>Medium Package</h3><p>send three satelite in space</p><b><h2>3.1M</h2></b></div>
+        <div class="pricing premium"><h3>Premium Package</h3><p>send five satelite in space</p><b><h2>5.5M</h2></b></div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

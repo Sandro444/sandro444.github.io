@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .clock{
+            height: 50vh;
+            width: 40vw;
+            border: 2px solid dodgerblue;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+        }
+        .timing{
+            height: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .break{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 'bla bla bla'
+             'bd bl bi';
+            border-right: 1px solid red;
+            border-bottom: 2px solid red;
+
+        }
+        #break-label{
+            grid-area: bla;
+            text-align: center;
+        }
+        #break-decrement{
+            display: inline-block;
+            grid-area: bd;
+            margin: 15% 10% 15% 30%;
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bolder;
+            border: none;
+        }
+        #break-decrement:active{
+            background-color: rgb(96, 176, 255);
+        }
+        #break-length{
+            grid-area: bl;
+            text-align: center;
+        }
+        #break-increment{
+            display: inline-block;
+            grid-area: bi;
+            margin: 15% 30% 15% 10%;
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bolder;
+            border: none;
+        }
+        #break-increment:active{
+            background-color: rgb(96, 176, 255);
+        }
+        .session{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 'sla sla sla' 
+            'sd sl si';
+            border-left: 1px solid red;
+            border-bottom: 2px solid red;
+
+        }
+        #session-label{
+            grid-area: sla;
+            text-align: center;
+        }
+        #session-decrement{
+            display: inline-block;
+            grid-area: sd;
+            margin: 15% 10% 15% 30%;
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bolder;
+            border: none;
+        }
+        #session-decrement:active{
+            background-color: rgb(96, 176, 255);
+        }
+        #session-length{
+            grid-area: sl;
+            text-align: center;
+        }
+        #session-increment{
+            display: inline-block;
+            grid-area: si;
+            margin: 15% 30% 15% 10%;
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bolder;
+            border: none;
+        }
+        #session-increment:active{
+            background-color: rgb(96, 176, 255);
+        }
+        .timer{
+            display: flex;
+            justify-content: center;
+        }
+        .timer-information{
+            border: 2px solid mediumseagreen;
+            margin: auto 0;
+            width: 40%;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btns{
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="timing">
+            <div class="break">
+                <h3 id="break-label">Break</h3>
+                <button id="break-decrement" onclick="breakdown()">-1</button>
+                <h3 id="break-length">5</h3>
+                <button id="break-increment" onclick="breakup()">+1</button>
+            </div>
+            <div class="session">
+                <h3 id="session-label">Session</h3>
+                <button id="session-decrement" onclick="sessiondown()">-1</button>
+                <h3 id="session-length">25</h3>
+                <button id="session-increment" onclick="sessionup()">+1</button>
+            </div>
+        </div>
+        <div class="timer">
+            <div class="timer-information">
+                <h3 id="timer-label">Session</h3>
+                <h2 id="time-left">25:00</h2>
+                <div class="btns">
+                    <button id="start_stop" onclick="starttimer();">start/stop</button>
+                    <button id="reset" onclick="resettimer()">reset</button>
+                </div>
+            </div>
+            <audio id="beep" src="Drum-Sounds/Z.mp3"></audio>
+        </div>
+    </div>
+    <audio id="beep" src="Drum-Sounds/Z.mp3"></audio>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+        var break_length = document.getElementById('break-length')
+        var session_length = document.getElementById('session-length')
+        var time_left = document.getElementById('time-left')
+        var timer_label = document.getElementById('timer-label')
+        var audio = document.getElementById('beep')
+        break_length.innerHTML = 5
+        session_length.innerHTML = 25
+        var stopped = false
+        var modeissession = true
+        var breaktime = 5
+        var sessiontime = 25
+        var time = sessiontime * 60
+        var minutes
+        var seconds
+        var Timer
+        function starttimer() {
+            if (modeissession == true){
+                timer_label.innerHTML = 'Session'
+                if (stopped == false){
+                    Timer = setInterval(function(){console.log('started')
+                    minutes = Math.floor(time / 60)
+                    if (minutes<10){
+                        minutes = '0' + minutes
+                    }
+                    seconds = time - minutes * 60
+                    if (seconds<10){
+                        seconds = '0' + seconds
+                    }
+                    time_left.innerHTML = minutes + ':' + seconds
+                    time -= 1
+                    if (time < 0){
+                        clearInterval(Timer)
+                        time = 0
+                        modeissession = false
+                        stopped = false
+                        time = breaktime * 60
+                        audio.play()
+                        start()
+                        }
+                    },1000)
+                    stopped = true
+                }
+                else{
+                    clearInterval(Timer)
+                    stopped = false
+                }
+            }
+            else{
+                timer_label.innerHTML = 'Break'
+                if (stopped == false){
+                    Timer = setInterval(function(){console.log('started')
+                    minutes = Math.floor(time / 60)
+                    if (minutes<10){
+                        minutes = '0' + minutes
+                    }
+                    seconds = time - minutes * 60
+                    if (seconds<10){
+                        seconds = '0' + seconds
+                    }
+                    time_left.innerHTML = minutes + ':' + seconds
+                    time -= 1
+                    if (time < 0){
+                        clearInterval(Timer)
+                        time = 0
+                        modeissession = true
+                        stopped = false
+                        time = sessiontime * 60
+                        var audio = document.getElementById('beep')
+                        audio.play()
+                        start()
+                        }
+                    },1000)
+                    stopped = true
+                }
+                else{
+                    clearInterval(Timer)
+                    stopped = false
+                }
+            }
+            console.log(modeissession)
+        }
+        function breakup() {
+                breaktime += 1
+                break_length.innerHTML = breaktime
+                if (breaktime > 60){
+                    breaktime = 60
+                    break_length.innerHTML = 60
+                }
+        }
+        function breakdown() {
+                breaktime -= 1
+                break_length.innerHTML = breaktime
+                if (breaktime < 1){
+                    breaktime = 1
+                    break_length.innerHTML = 1
+                }
+        }
+        function sessionup() {
+                sessiontime +=1
+                session_length.innerHTML = sessiontime
+                if (sessiontime > 60){
+                    sessiontime = 60
+                    session_length.innerHTML = 60
+                }
+        }
+        function sessiondown() {
+                sessiontime -=1
+                session_length.innerHTML = sessiontime
+                if (sessiontime < 1){
+                    sessiontime = 1
+                    session_length.innerHTML = 1
+                }
+        }
+        function resettimer(){
+            audio.pause()
+            audio.currentTime = 0
+            sessiontime = 25
+            breaktime = 5
+            time_left = sessiontime + ':' + '00' 
+        }
+    </script>
+</body>
+</html>

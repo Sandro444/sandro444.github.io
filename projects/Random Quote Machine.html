@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;
+            padding:0;
+            box-sizing: border-box;}
+        body{background-color: brown; height: 100vh;}
+        .content{
+            height: auto;
+            width: 50%;
+            display:grid;
+            grid-template-rows: 2fr 1fr 1fr;
+            grid-gap: 0ch;
+            background-color: white;
+            border-radius: 5%;
+
+        }
+        #quote-box{height:100%;
+        flex-direction:column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+.quo{margin-left: 10%;padding-right: 5%;}
+.div2{display:flex;justify-content: flex-end;}
+.author{display: flex;justify-content: flex-end;align-items: flex-end;margin-right: 10%;}
+.button{display: flex;align-items: center;justify-content: flex-end;display: grid;grid-template-columns: 1fr 1fr;}
+#new-quote{display: block;width: 50%;height: 30%;background-color: cadetblue;border: none; color: white;}
+.quotation{display: flex;align-items: center;}
+#tweet-quote{float: left;}
+#c{margin-top:5px;color:white}
+    </style>
+</head>
+<body id="body">
+    <div id="quote-box">
+        <div class="content"><div class="quotation">
+            <p class="quo"><h1 id='text' class="quote"> Load Quote </h1></p></div>
+    <div class="author"><p id='author'>Author</p></div>
+    <div class="button">
+        <div class="div1"><a id="tweet-quote" href="twitter.com/intent/tweet">Tweet</a></div>
+        <div class="div2"><button id="new-quote" onclick="change(quotes)">Change Quote</button></div>
+    </div>
+</div>
+<p id="c">by Sandro Tsereteli</p>
+</div>
+    <script>
+        var quotes = [
+            {quote:'"I try to create sympathy for my characters, then turn the monsters loose."', author:'Stephen King'},
+            {quote:'"Prose is architecture, not interior decoration."', author:'Ernest Hemingway'},
+            {quote:'"It’s none of their business that you have to learn to write. Let them think you were born that way."', author:'Ernest Hemingway'},
+            {quote:'"Most writers regard the truth as their most valuable possession, and therefore are most economical in its use."', author:'Mark Twain'},
+            {quote:'"To produce a mighty book, you must choose a mighty theme."', author:'Herman Melville'},
+            {quote:'"It is perfectly okay to write garbage—as long as you edit brilliantly."', author:'C. J. Cherryh'}
+        ]   
+        function change(quotepool){
+        var rand = Math.floor(Math.random()*quotes.length)
+        var randcol = Math.floor(Math.random() * 16777215).toString(16);
+        randcol = "#" + randcol; 
+        var quotation = quotepool[rand].quote
+        var authorname = quotepool[rand].author
+        document.getElementById('author').innerHTML=authorname
+        document.getElementById('body').style.backgroundColor=randcol
+        document.getElementById("text").innerHTML=quotation
+        document.getElementById('new-quote').style.backgroundColor=randcol
+        document.getElementById('author').style.color=randcol
+        var g=document.getElementsByClassName('quote')
+        for(var i = 0; i < g.length; i++){
+		g[i].style.color = randcol;
+	}}
+        /**/
+    </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {margin: 0em;
+        }
+        #navbar{
+            height: 10%;
+            width: 100%;
+            margin-top:0;
+            background-color: brown;
+            position: fixed;
+            top: 0;
+        }
+        ul{
+            list-style-type: none;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        li a{
+            font-size: 26px;
+            text-decoration: none;
+            color:darkblue;
+            font-weight: bold;
+        }
+        li:hover{background-color: white;}
+        li{
+            position: relative;
+            right: 0;
+            left: 0%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+            width: 20vw ;
+        }
+        #welcome-section{
+            height:100vh;
+            background-color: cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+        }
+        #welcome-section h1{
+            font-size:3vw;
+            font-family: 'Raleway', sans-serif;
+            color: navy;
+        }
+        #welcome-section h4{
+            font-size:1.5vw;
+            color: brown;
+            font-style: italic;
+            font-weight: 200;
+        }
+        #projects{display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+            background-color: indianred;
+            height: 100vh;
+            width: 100%;
+        }
+        .projectgrid{
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        #projects img{
+            box-sizing: border-box;
+            display: block;
+            width: 40vh;
+            height: 30vh;
+            transition: 0.5s;
+        }
+        #projects img:hover{
+            transition: 0.5s;
+            width: 41vh;
+            height: 31vh;
+        }
+        #projects a:hover{background-color: darkgrey;}
+        #contact img{
+            width:5vw;
+            height: 5vw;
+        }
+        #contact{
+            height:50vh;
+            width: 100%;
+            background-color: slateblue;
+            display: flex;
+            align-items: center;
+            flex-flow: column wrap;
+            justify-content: center;
+
+        }
+        .cont{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .cont img{
+            margin-left: 4px;
+        }
+        .cont h3{
+            color: darkblue;
+            text-decoration: none;
+        }
+        a h1{
+            text-decoration: none;
+            text-align: center;
+            color: darkblue;
+        }
+        .myp{
+            font-size: 44px;
+            text-align: center;
+            color:white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #projects a{
+            text-decoration: none;
+            background-color: cadetblue;
+            margin-top: 2px;
+        }
+        @media (max-width: 550px){
+            #projects img{
+                width: 27vh;
+                height: 18vh;
+            }
+        }
+        @media (max-height: 550px){
+            #projects img{
+                width: 32vh;
+                height: 22vh;
+            }
+            #projects a h1{
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul><li href="projects"><a href="#project">Projects</a></li><li href="contact"><a href="#contact">Contact</a></li></ul>
+    </nav>
+    <section id="welcome-section"><h1>Hey I am Sandro</h1><h4>a web developer</h4></section>
+    <section id="projects">
+        <h1 class="myp">My projects</h1>
+        <div class="projectgrid">
+            <a class="project-tile f" href="https://github.com/Sandro444/FreeCodeCamp-Projects/blob/master/Responsive%20Web%20Design/Tribute%20Project.html" target="_blank"><img src="https://i.ibb.co/nc4v9dg/img1.png" alt="img1" border="0"><h1>Tribute page</h1></a>
+            <a class="project-tile s" href="https://github.com/Sandro444/FreeCodeCamp-Projects/blob/master/Responsive%20Web%20Design/Survey%20Form%20Project.html" target="_blank"><img src="https://i.ibb.co/kSRR4GG/img2.png" alt="img2" border="0"><h1>Survey form</h1></a>
+            <a class="project-tile t" href="https://github.com/Sandro444/FreeCodeCamp-Projects/blob/master/Responsive%20Web%20Design/Product%20Landing%20Page%20Project.html" target="_blank"><img src="https://i.ibb.co/B32q1s3/img3.png" alt="img3" border="0"><h1>Product page</h1></a>
+            <a class="project-tile fr" href="https://github.com/Sandro444/FreeCodeCamp-Projects/blob/master/Responsive%20Web%20Design/Technical%20Documentation%20Project.html" target="_blank"><img src="https://i.ibb.co/0GJFRfP/img4.png" alt="img4" border="0"><h1>Documentation</h1></a>
+                </div>
+    </section>
+    <section id="contact">
+        <a class="cont" href="https://github.com/Sandro444" id="profile-link" target="_blank"><h3>Contact me on github </h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"></a>
+    </section>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

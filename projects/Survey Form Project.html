@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body{
+            background-color: rgb(66, 241, 142);
+        }
+        #title{
+            color:darkgreen;
+            text-align: center;
+        }
+        #description{
+            font-family: monospace;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        input{
+            background-color: powderblue;
+            border:1px solid black;
+        }
+        select{
+            background-color: powderblue;
+        }
+        textarea{
+            background-color: powderblue;
+        }
+        #survey-form{
+            background-color: mediumturquoise;
+            border: 2px solid red;
+            margin: 0 auto;
+            width: 60vw;
+        }
+        #name-label{
+            display: block;
+            padding: 5% 5% 5% 5% ;
+            font-size: 20px;
+            
+        }
+        #email-label{
+            display: block;
+            padding: 0% 5% 5% 5% ;
+            font-size: 20px;
+
+        }#number-label{
+            display: block;
+            padding: 0% 5% 5% 5% ;
+            font-size: 20px;
+
+        }
+        #number-label > input{
+            width: 10vw;
+        }
+        #email-label > input{
+            width: 10vw;
+        }
+        #name-label > input{
+            width: 10vw;
+        }
+        .clubs{
+            display: block;
+            padding: 0% 5% 1% 5% ;
+            font-size: 20px;
+        }
+        .clubs > select{display:block;
+        width: 10vw;}
+        form > p{
+            font-size: 20px;
+            display: block;
+            padding: 0% 5% 0 5% ;
+        }
+        .lab{
+            padding-left: 5%;
+        }
+        .check{
+            padding-left: 5%;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            padding: 1% 2%;
+            background-color: dodgerblue;
+            border: 2px solid rosybrown;
+        }
+        textarea{margin-left: 5%;}
+        img{
+            float: right;
+            margin-right: 20px;
+            margin-top: 20px;
+            border-radius: 5%;
+            width: 15em;
+            height: 10em;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Football Fans Survey</h1>
+    <p id="description"> take quick survey to improve our statistics</p>
+    <form id="survey-form">
+        <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/11/05/15/football-crowd.jpg">
+        <label id="name-label"> Name
+        <input id="name" name="name" type="text" required placeholder="enter your name">
+        </label>
+        <label id="email-label">  Email
+        <input id="email" name="emails" type="email" required placeholder="enter your email">
+        </label>
+        <label id="number-label"> Age
+        <input id="number" name="age" type="number" placeholder="enter your age" min="10" max="100">
+        </label>
+        <label class="clubs">Which club do you support?
+            <select id="dropdown" required>
+                <option disabled selected value="select">select one</option>
+                <option>Manchester United</option>
+                <option>Real Madrid</option>
+                <option>FC Barcelona</option>
+            </select>
+        </label>
+        <p>how many times do you watch football in a month?</p>
+        <label class="lab">Once <input type="radio" name="watch" value="one"></label>
+        <label class="lab">Twice <input type="radio" name="watch" value="two"></label>
+        <label class="lab">Three-Five <input type="radio" name="watch" value="threefive"></label>
+        <label class="lab">More<input type="radio" name="watch" value="more"></label>
+        <p> which player do you like?</p>
+        <label class="check">Messi <input type="checkbox" value="messi"></label>
+        <label class="check">Ronaldo <input type="checkbox" value="ronaldo"></label>
+        <label class="check">Neymar <input type="checkbox" value="neymar"></label>
+        <label class="check">Bruno Fernandes <input type="checkbox" value="bruno fernandes"></label>
+        <p> any suggestion or comment?</p>
+        <textarea placeholder="your comment please" style="height: 120px;resize: none;" cols="60" rows="100" ></textarea>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
