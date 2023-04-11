@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.5d9ec8d8.css",
-    "main.js": "./static/js/main.98184a96.js",
-    "static/media/clouds.png": "./static/media/clouds.3c700c1313cc1cd3d3c5.png",
+    "main.css": "./static/css/main.741e2de5.css",
+    "main.js": "./static/js/main.788837a3.js",
     "static/media/login-image.jpg": "./static/media/login-image.21e8ba3f9dca3c346851.jpg",
     "static/media/ilya-yakover.jpg": "./static/media/ilya-yakover.751c23c0dc4ff39577cf.jpg",
     "static/media/fabio-mangione.jpg": "./static/media/fabio-mangione.488bc249dffdae3556c6.jpg",
@@ -19,13 +18,12 @@
     "static/media/erik-lucatero-2.jpg": "./static/media/erik-lucatero-2.d09715abe0463c58d6be.jpg",
     "static/media/nucleo-icons.eot": "./static/media/nucleo-icons.bd42d77b9672555647d1.eot",
     "static/media/nucleo-icons.ttf": "./static/media/nucleo-icons.4466aeec3386b965a232.ttf",
-    "static/media/creative-tim-white-slim2.png": "./static/media/creative-tim-white-slim2.dbb52a5d5ace9953ba5f.png",
     "static/media/nucleo-icons.woff": "./static/media/nucleo-icons.8e954b749f951b654fc6.woff",
     "static/media/nucleo-icons.woff2": "./static/media/nucleo-icons.ec16bc4cc4526801004d.woff2",
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.5d9ec8d8.css",
-    "static/js/main.98184a96.js"
+    "static/css/main.741e2de5.css",
+    "static/js/main.788837a3.js"
   ]
 }
