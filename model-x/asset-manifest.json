@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.741e2de5.css",
-    "main.js": "./static/js/main.457d79a0.js",
+    "main.css": "./static/css/main.2ccc451e.css",
+    "main.js": "./static/js/main.a92dd18b.js",
     "static/media/login-image.jpg": "./static/media/login-image.21e8ba3f9dca3c346851.jpg",
     "static/media/ilya-yakover.jpg": "./static/media/ilya-yakover.751c23c0dc4ff39577cf.jpg",
     "static/media/fabio-mangione.jpg": "./static/media/fabio-mangione.488bc249dffdae3556c6.jpg",
@@ -22,7 +22,7 @@
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.741e2de5.css",
-    "static/js/main.457d79a0.js"
+    "static/css/main.2ccc451e.css",
+    "static/js/main.a92dd18b.js"
   ]
 }
