@@ -1,20 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.2ccc451e.css",
-    "main.js": "./static/js/main.36bfee23.js",
-    "static/media/login-image.jpg": "./static/media/login-image.21e8ba3f9dca3c346851.jpg",
-    "static/media/ilya-yakover.jpg": "./static/media/ilya-yakover.751c23c0dc4ff39577cf.jpg",
-    "static/media/fabio-mangione.jpg": "./static/media/fabio-mangione.488bc249dffdae3556c6.jpg",
-    "static/media/uriel-soberanes.jpg": "./static/media/uriel-soberanes.b741f54e9ccbd071a751.jpg",
-    "static/media/daniel-olahh.jpg": "./static/media/daniel-olahh.77c0ffac60f9218de675.jpg",
-    "static/media/profile-page.png": "./static/media/profile-page.3a626caf205d1143f192.png",
-    "static/media/landing-page.png": "./static/media/landing-page.80158096b63fb4a837e1.png",
-    "static/media/clem-onojeghuo-2.jpg": "./static/media/clem-onojeghuo-2.d16702ce00aa38f275c0.jpg",
-    "static/media/ayo-ogunseinde-2.jpg": "./static/media/ayo-ogunseinde-2.f4af8f2c98f6968c5ae9.jpg",
-    "static/media/joe-gardner-2.jpg": "./static/media/joe-gardner-2.09841708956117e93a7b.jpg",
-    "static/media/clem-onojeghuo-3.jpg": "./static/media/clem-onojeghuo-3.83003f446b7372176b72.jpg",
-    "static/media/kaci-baum-2.jpg": "./static/media/kaci-baum-2.9b929eea6c1ef2b4dbb4.jpg",
-    "static/media/erik-lucatero-2.jpg": "./static/media/erik-lucatero-2.d09715abe0463c58d6be.jpg",
+    "main.css": "./static/css/main.cbe40d1a.css",
+    "main.js": "./static/js/main.2bc5f231.js",
     "static/media/nucleo-icons.eot": "./static/media/nucleo-icons.bd42d77b9672555647d1.eot",
     "static/media/nucleo-icons.ttf": "./static/media/nucleo-icons.4466aeec3386b965a232.ttf",
     "static/media/nucleo-icons.woff": "./static/media/nucleo-icons.8e954b749f951b654fc6.woff",
@@ -22,7 +9,7 @@
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/css/main.2ccc451e.css",
-    "static/js/main.36bfee23.js"
+    "static/css/main.cbe40d1a.css",
+    "static/js/main.2bc5f231.js"
   ]
 }
